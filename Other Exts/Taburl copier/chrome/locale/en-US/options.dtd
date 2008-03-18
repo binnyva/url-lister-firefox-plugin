@@ -1,0 +1,9 @@
+<!ENTITY title.label "Tab URL Copier options">
+<!ENTITY groupbox.label "Tab URL Copier options:">
+<!ENTITY delimiter.label "Line Delimiter:">
+<!ENTITY showtotal.label "Include total number of URLs">
+<!ENTITY showtotal.tooltiptext "Toggle whether or not to include the total number of addresses copied">
+<!ENTITY cmdsave.label "Save Options">
+<!ENTITY cmdsave.tooltiptext "Click to save the options and exit the options screen">
+<!ENTITY cmdcancel.label "Cancel">
+<!ENTITY cmdcancel.tooltiptext "Exit the options screen without saving changes">

@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+
+<dialog buttons="accept, cancel" id="urllister-main-dialog"
+		ondialogaccept="UrlLister.openUrls()" onload="UrlLister.getUrls()" title="URL Lister"
+		xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+	<script src="urllister.js" />
+	
+	<groupbox>
+		<label control="url-list" value="Open URLs"/>
+	    <textbox id="url-list" rows="10" cols="35" multiline="true" style="width:100%" />
+		
+		<hbox>
+			<menulist id="format-menu" label="Format">
+				<menupopup id="format-popup">
+					<menuitem label="Plain Text URLs"/>
+					<menuitem label="HTML Anchors"/>
+					<menuitem label="Linked List"/>
+				</menupopup>
+			</menulist>
+			<button id="button-copy" label="Copy" />
+			<button id="button-paste" label="Paste" />
+		</hbox>
+	</groupbox>
+</dialog>

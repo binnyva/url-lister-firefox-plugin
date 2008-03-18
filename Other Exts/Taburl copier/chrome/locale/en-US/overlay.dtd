@@ -1,0 +1,4 @@
+<!ENTITY menuCopy.label "Copy Tab URLs">
+<!ENTITY menuCopy.tooltiptext "Copies the URLs of all open tabs to the clipboard">
+<!ENTITY menuPaste.label "Open Tabs from Clipboard">
+<!ENTITY menuPaste.tooltiptext "Open tabs from list of URLs on the clipboard">

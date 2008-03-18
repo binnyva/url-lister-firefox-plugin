@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<RDF:RDF xmlns:em="http://www.mozilla.org/2004/em-rdf#"
+         xmlns:NC="http://home.netscape.com/NC-rdf#"
+         xmlns:RDF="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+  <RDF:Description RDF:about="rdf:#$uB22A2"
+                   em:id="{ec8030f7-c20a-464f-9b0e-13a3a9e97384}"
+                   em:minVersion="1.5"
+                   em:maxVersion="2.0.0.*" />
+  <RDF:Description RDF:about="urn:mozilla:install-manifest"
+                   em:id="{007C7BD8-3DB5-41e5-A7D9-7021B464CC9D}"
+                   em:name="Tab URL Copier"
+                   em:version="1.1.8.20061010"
+                   em:creator="Thomas Gibbons"
+                   em:description="Copies the URLs of all open tabs"
+                   em:iconURL="chrome://taburlcopier/skin/icon.png"
+                   em:contributor="Mozillazine.org"
+                   em:optionsURL="chrome://taburlcopier/content/options.xul">
+    <em:targetApplication RDF:resource="rdf:#$uB22A2"/>
+    <em:file RDF:resource="urn:mozilla:extension:file:taburlcopier.jar"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mozilla:extension:file:taburlcopier.jar"
+                   em:package="content/"
+                   em:skin="skin/classic/taburlcopier"
+                   em:locale="locale/en-US/" />
+</RDF:RDF>

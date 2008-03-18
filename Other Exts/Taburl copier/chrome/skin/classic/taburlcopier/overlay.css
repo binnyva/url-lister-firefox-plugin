@@ -1,0 +1,6 @@
+.listcopy {
+   list-style-image: url("chrome://taburlcopier/skin/copyicon.png");
+}
+.listpaste {
+   list-style-image: url("chrome://taburlcopier/skin/pasteicon.png");
+}

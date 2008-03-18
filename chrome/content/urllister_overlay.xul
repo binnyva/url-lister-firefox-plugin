@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+
+<overlay id="helloworld-overlay"
+    xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+	<script src="chrome://urllister/content/urllister.js" />
+	
+	<menupopup id="menu_ToolsPopup"> 
+		<menuitem label="URL Lister..."
+			insertafter="devToolsSeparator" 
+			oncommand="UrlLister.showMainDialog();" />
+	</menupopup>
+	
+	<statusbar id="status-bar">
+		<statusbarpanel class="statusbarpanel-iconic" id="urllister_sbi"
+			onclick="UrlLister.showMainDialog();"
+			src="chrome://urllister/content/images/lister16.png" />
+	</statusbar>
+</overlay>

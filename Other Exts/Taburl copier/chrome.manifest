@@ -1,0 +1,7 @@
+content	taburlcopier	jar:chrome/taburlcopier.jar!/content/
+overlay	chrome://browser/content/browser.xul	chrome://taburlcopier/content/overlay.xul
+
+locale	taburlcopier	en-US	jar:chrome/taburlcopier.jar!/locale/en-US/
+
+skin	taburlcopier	classic/1.0	jar:chrome/taburlcopier.jar!/skin/classic/taburlcopier/
+style	chrome://global/content/customizeToolbar.xul	chrome://taburlcopier/skin/overlay.css
