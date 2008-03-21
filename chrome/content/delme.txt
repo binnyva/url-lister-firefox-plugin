@@ -1,3 +1,0 @@
-http://developer.mozilla.org/en/docs/XUL_Tutorial:Updating_Commands
-http://mxr.mozilla.org/seamonkey/source/browser/base/content/utilityOverlay.js#556
-http://starkravingfinkle.org/blog/2007/01/extension-development-with-fuel/ 

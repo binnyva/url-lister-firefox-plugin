@@ -1,4 +1,5 @@
 <?xml version="1.0"?>
+<?xml-stylesheet href="chrome://urllister/skin/overlay.css" type="text/css"?>
 
 <overlay id="helloworld-overlay"
     xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
@@ -13,6 +14,6 @@
 	<statusbar id="status-bar">
 		<statusbarpanel class="statusbarpanel-iconic" id="urllister_sbi"
 			onclick="UrlLister.showMainDialog();"
-			src="chrome://urllister/content/images/lister16.png" />
+			src="chrome://urllister/skin/images/icon16.png" />
 	</statusbar>
 </overlay>

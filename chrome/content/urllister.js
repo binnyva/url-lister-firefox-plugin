@@ -1,4 +1,7 @@
 var UrlLister = {
+	/**
+	 * Adds a menu item called 'URL Lister...' to the menu that appear when a tab is right clicked.
+	 */
 	addUrlListerToTabContext:function() {
 		if(!this.initalized) {
 			var tabBarContextMenu = document.getAnonymousElementByAttribute(gBrowser, 'anonid', 'tabContextMenu');
@@ -7,6 +10,7 @@ var UrlLister = {
 				
 				menu_item_urllist.setAttribute('label', "URL Lister...");
 				menu_item_urllist.setAttribute('tooltiptext', "Shows a list of all open URLs");
+				menuitemcopy.setAttribute('class', 'menu-iconic menuitem-iconic urllister-icon16');
 				menu_item_urllist.setAttribute('oncommand', 'UrlLister.showMainDialog();');
 			
 				tabBarContextMenu.insertBefore(menu_item_urllist, tabBarContextMenu.lastChild.previousSibling); //Second last item.
@@ -29,6 +33,7 @@ var UrlLister = {
 		document.getElementById("url-list").value = Clipboard.get();
 	},
 	
+	/// Happens when the OK button of the tab is clicked. Opens up the URLs in the textarea - if they are not already open.
 	openUrls:function () {
 		openNewTabWith = window.arguments[1];
 		var urls = document.getElementById("url-list").value.split("\n");
@@ -47,6 +52,7 @@ var UrlLister = {
 
 	},
 	
+	/// Called when the main dialog is opened - it fetchs the list of open tabs and set it as the value of the textarea.
 	getUrls:function () {
  		gBrowser = window.arguments[0];
 		var all_tabs = gBrowser.mTabContainer.childNodes;
@@ -69,27 +75,41 @@ var UrlLister = {
 		document.getElementById("button-paste").addEventListener('click', UrlLister.pasteUrls, false);
 	},
 	
+	/// This is called when the format dropdown is changed.
 	setFormat: function(format_index) {
 		if(format_index == 2) document.getElementById("url-list").value = UrlLister.getLinkedList();
 		else if(format_index == 1) document.getElementById("url-list").value = UrlLister.getHtmlAnchors();
 		else document.getElementById("url-list").value = UrlLister.getPlainText();
 	},
 	
+	/**
+	 * Converts the URL array to plain text - just urls seperated by a new line
+	 */
 	getPlainText: function() {
 		return window.tab_list.map(function(ele){return ele.url;}).join("\n");
 	},
+	/// Converts the URL array to Anchors - in this format : <a href="url">Title</a><br />
 	getHtmlAnchors: function() {
 		return window.tab_list.map(function(ele){return '<a href="'+ele.url+'">'+ele.title+'</a><br />';}).join("\n");
 	},
+	/// Returns a bunch of anchors formated as a unordered list.
 	getLinkedList: function() {
 		return "<ul>\n" + window.tab_list.map(function(ele){return '<li><a href="'+ele.url+'">'+ele.title+'</a></li>';}).join("\n") + "\n</ul>";
 	},
 	
+	/**
+	 * Open up the main dialog of this applicaton. Unfortunatly, the scope of the new dialog will be very different from the current scope -
+	 * 		so we pass the stuff we will use along with it - the arguments after gBrowser is that - stuff from the global scope thats not
+	 * 		available in a dialog's scope.
+	 */
 	showMainDialog: function () {
 		window.openDialog("chrome://urllister/content/main_dialog.xul", "URL Lister", "chrome,width=600,height=320", gBrowser, openNewTabWith);
 	}
 }
 
+/**
+ * The clipboard library - hopefully, from the next versino we will be able to use FUEL.
+ */
 var Clipboard = {
 	"set": function(text) {
 		var clipboard = Components.classes['@mozilla.org/widget/clipboardhelper;1'].getService(Components.interfaces.nsIClipboardHelper);
