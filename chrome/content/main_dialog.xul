@@ -4,6 +4,7 @@
 <dialog buttons="accept, cancel" id="urllister-main-dialog"
 		ondialogaccept="UrlLister.openUrls()" onload="UrlLister.getUrls()" title="URL Lister"
 		xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+	<script src="lib.js" />
 	<script src="urllister.js" />
 	
 	<groupbox>

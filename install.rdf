@@ -9,10 +9,11 @@
    
     <!-- Front End MetaData -->
     <em:name>URL Lister</em:name>
-    <em:description>Shows the URLs of all the tabs in a textarea so that it can be copies easily</em:description>
+    <em:description>Shows the URLs of all the tabs in a textarea so that it can be copies easily.</em:description>
     <em:creator>Binny V A</em:creator>
 	<em:homepageURL>http://www.bin-co.com/tools/firefox/extensions/urllister/</em:homepageURL>
 	<em:iconURL>chrome://urllister/skin/images/icon32.png</em:iconURL>
+	<em:optionsURL>chrome://urllister/content/options.xul</em:optionsURL>
 	
 	<!-- Target Application this extension can install into, 
 		 with minimum and maximum supported versions. --> 
