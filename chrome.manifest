@@ -1,2 +1,5 @@
 content		urllister		chrome/content/
 overlay		chrome://browser/content/browser.xul	chrome://urllister/content/urllister_overlay.xul
+
+skin		urllister		classic/1.0		chrome/skin/classic/urllister/
+style		chrome://global/content/customizeToolbar.xul	chrome://urllister/skin/overlay.css

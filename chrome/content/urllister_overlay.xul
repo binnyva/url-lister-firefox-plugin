@@ -8,6 +8,7 @@
 	<menupopup id="menu_ToolsPopup"> 
 		<menuitem label="URL Lister..."
 			insertafter="devToolsSeparator" 
+			class="menu-iconic menuitem-iconic urllister-icon16" 
 			oncommand="UrlLister.showMainDialog();" />
 	</menupopup>
 	

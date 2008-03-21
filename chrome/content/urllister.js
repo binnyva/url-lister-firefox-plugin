@@ -10,8 +10,8 @@ var UrlLister = {
 				
 				menu_item_urllist.setAttribute('label', "URL Lister...");
 				menu_item_urllist.setAttribute('tooltiptext', "Shows a list of all open URLs");
-				menuitemcopy.setAttribute('class', 'menu-iconic menuitem-iconic urllister-icon16');
-				menu_item_urllist.setAttribute('oncommand', 'UrlLister.showMainDialog();');
+				menu_item_urllist.setAttribute('class', "menu-iconic menuitem-iconic urllister-icon16");
+				menu_item_urllist.setAttribute('oncommand', "UrlLister.showMainDialog();");
 			
 				tabBarContextMenu.insertBefore(menu_item_urllist, tabBarContextMenu.lastChild.previousSibling); //Second last item.
 			}
@@ -59,7 +59,8 @@ var UrlLister = {
 		var tab_list = [];
 		for (var i = 0; i < all_tabs.length; i++ ) {
 			var tab = gBrowser.getBrowserForTab(all_tabs[i]).contentDocument;
-			tab_list.push({"url":tab.location, "title":tab.title});
+			if(tab.location != "about:blank")
+				tab_list.push({"url":tab.location, "title":tab.title});
 		}
 		window.tab_list = tab_list;
 		
