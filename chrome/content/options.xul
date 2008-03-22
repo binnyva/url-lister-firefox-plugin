@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+
+<dialog buttons="accept, cancel" id="urllister-main-dialog" height="450" width="400"
+		ondialogaccept="UrlListerOptions.saveOptions()" onload="UrlListerOptions.readOptions()" title="URL Lister Options"
+		xmlns:html="http://www.w3.org/1999/xhtml"
+		xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+	<script src="lib.js" />
+	<script src="options.js" />
+	
+	<groupbox flex="1">
+		<caption label="Automation" />
+		<label control="default-format-menu" value="Default Format"/>
+		<menulist id="default-format-menu" label="Default Format" tooltip="Uses the as the default format when the URL list is shown.">
+			<menupopup id="default-format-popup">
+				<menuitem label="Plain Text URLs"/>
+				<menuitem label="HTML Anchors"/>
+				<menuitem label="Linked List"/>
+			</menupopup>
+		</menulist>
+		
+		<html:p>
+			<html:input id="auto-copy-checkbox" type="checkbox"/>
+			<html:label for="auto-copy-checkbox">Automatically Copy</html:label>
+			<html:br />
+			Copies the list of URLs when the main dialog is opened. Warning: overwrites clipboard contents.
+		</html:p>
+		
+		<html:p>
+			<html:input id="open-on-paste-checkbox" type="checkbox"/>
+			<html:label for="open-on-paste-checkbox">Open Tabs when Paste is clicked</html:label>
+			<html:br />
+			If you click the paste button, the URLs in the clipboard are automatiacally opened(you don't have to press the OK button)
+		</html:p>
+	</groupbox>
+	
+	<groupbox flex="1">
+		<caption label="Delimiters" />
+		<radiogroup>
+			<radio id="windows-delimiter-radio" label="\r\n (Windows)" />
+			<radio id="linux-delimiter-radio" label="\n (Linux)" />
+			<radio id="mac-delimiter-radio" label="\r (Mac)" />
+		</radiogroup>
+	</groupbox>
+</dialog>
