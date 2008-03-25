@@ -1,15 +1,16 @@
 <!ENTITY options.title "URL Lister Options">
 <!ENTITY automation.label "Automation">
 <!ENTITY defaultFormat.value "Default Format">
+<!ENTITY defaultFormat.label "Default Format">
 <!ENTITY defaultFormat.tooltip "Uses the as the default format when the URL list is shown.">
 <!ENTITY plainTextUrls.label "Plain Text URLs">
 <!ENTITY htmlAnchors.label "HTML Anchors">
 <!ENTITY linkedList.label "Linked List">
 <!ENTITY autoCopy.label ">Automatically Copy">
-<!ENTITY .label "">
-<!ENTITY .label "">
-<!ENTITY .label "">
-<!ENTITY .label "">
-<!ENTITY .label "">
-<!ENTITY .label "">
-<!ENTITY .label "">
+<!ENTITY autoCopyExplaination.p "Copies the list of URLs when the main dialog is opened. Warning: overwrites clipboard contents.">
+<!ENTITY openOnPaste.label "Open Tabs when Paste is clicked">
+<!ENTITY openOnPaste.p "If you click the paste button, the URLs in the clipboard are automatiacally opened(you don't have to press the OK button)">
+<!ENTITY delimiter.label "Delimiters">
+<!ENTITY windows.label "\r\n (Windows)">
+<!ENTITY linux.label "\n (Linux)">
+<!ENTITY mac.label "\r (Mac)">

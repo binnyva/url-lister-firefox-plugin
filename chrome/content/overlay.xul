@@ -1,12 +1,17 @@
 <?xml version="1.0"?>
 <?xml-stylesheet href="chrome://urllister/skin/overlay.css" type="text/css"?>
+<!DOCTYPE urllister SYSTEM "chrome://urllister/locale/overlay.dtd">
 
 <overlay id="helloworld-overlay"
     xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 	<script src="chrome://urllister/content/urllister.js" />
 	
+	<stringbundleset id="stringbundleset">
+		<stringbundle id="bundle_urllister" src="chrome://urllister/locale/main.properties" />
+	</stringbundleset>
+	
 	<menupopup id="menu_ToolsPopup"> 
-		<menuitem label="URL Lister..."
+		<menuitem label="&menuItem.label;"
 			insertafter="devToolsSeparator" 
 			class="menu-iconic menuitem-iconic urllister-icon16" 
 			oncommand="UrlLister.showMainDialog();" />
