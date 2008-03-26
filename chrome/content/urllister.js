@@ -9,8 +9,8 @@ var UrlLister = {
 			if (tabBarContextMenu) {
 				var menu_item_urllist = document.createElement('menuitem');
 				
-				menu_item_urllist.setAttribute('label', "URL Lister...");
-				menu_item_urllist.setAttribute('tooltiptext', "Shows a list of all open URLs");
+				menu_item_urllist.setAttribute('label', document.getElementById('bundle_urllister').getString('urllister-menuItem.label'));
+				menu_item_urllist.setAttribute('tooltiptext', document.getElementById('bundle_urllister').getString('urllister-menuItem.tooltip'));
 				menu_item_urllist.setAttribute('class', "menu-iconic menuitem-iconic urllister-icon16");
 				menu_item_urllist.setAttribute('oncommand', "UrlLister.showMainDialog();");
 			

@@ -1,26 +1,27 @@
 <?xml version="1.0"?>
 <?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<!DOCTYPE urllister SYSTEM "chrome://urllister/locale/main_dialog.dtd">
 
 <dialog buttons="accept, cancel" id="urllister-main-dialog"
-		ondialogaccept="UrlLister.openUrls()" onload="UrlLister.getUrls()" title="URL Lister"
+		ondialogaccept="UrlLister.openUrls()" onload="UrlLister.getUrls()" title="&urlLister.title;"
 		xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 	<script src="lib.js" />
 	<script src="urllister.js" />
 	
 	<groupbox>
-		<label control="url-list" value="Open URLs"/>
+		<label control="url-list" value="&openUrls.label;"/>
 	    <textbox id="url-list" rows="10" cols="35" multiline="true" style="width:100%" />
 		
 		<hbox>
-			<menulist id="format-menu" label="Format">
+			<menulist id="format-menu" label="&format.label;">
 				<menupopup id="format-popup">
-					<menuitem label="Plain Text URLs"/>
-					<menuitem label="HTML Anchors"/>
-					<menuitem label="Linked List"/>
+					<menuitem label="&plainText.label;"/>
+					<menuitem label="&htmlAnchors.label;"/>
+					<menuitem label="&linkedList.label;"/>
 				</menupopup>
 			</menulist>
-			<button id="button-copy" label="Copy" />
-			<button id="button-paste" label="Paste" />
+			<button id="button-copy" label="&copy.label;" />
+			<button id="button-paste" label="&paste.label;" />
 		</hbox>
 	</groupbox>
 </dialog>

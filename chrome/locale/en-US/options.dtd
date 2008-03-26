@@ -1,38 +1,16 @@
-<!ENTITY snaplinks.dialog.snaplink    "Snap Links Options">
-
-<!ENTITY snaplinks.mouse.caption      "Mouse Button">
-<!ENTITY snaplinks.mouse.description  "Drawing mouse button (changes require browser reload):">
-<!ENTITY snaplinks.mouse.left         "Left Button">
-<!ENTITY snaplinks.mouse.middle       "Middle Button">
-<!ENTITY snaplinks.mouse.right        "Right Button">
-
-<!ENTITY snaplinks.da.caption         "Default Action">
-<!ENTITY snaplinks.da.description     "Executed action when the mouse button is released:">
-<!ENTITY snaplinks.da.r0.newtabs      "Open Links in new Tabs (default)">
-<!ENTITY snaplinks.da.r1.newwindows   "Open Links in new Windows">
-<!ENTITY snaplinks.da.r2.tabsinnewwin "Open Links in a new Window">
-<!ENTITY snaplinks.da.r3.clipboard    "Copy Links to Clipboard">
-<!ENTITY snaplinks.da.r4.bookmark     "Bookmark Links">
-<!ENTITY snaplinks.da.r5.download     "Download Links">
-
-<!ENTITY snaplinks.drawing.caption    "Drawing Rectangle">
-<!ENTITY snaplinks.drawing.color      "Color:">
-<!ENTITY snaplinks.drawing.thick      "Thickness:">
-
-<!ENTITY snaplinks.links.caption      "Selected Links Rectangle">
-<!ENTITY snaplinks.links.color        "Color:">
-<!ENTITY snaplinks.links.thick        "Thickness:">
-
-<!ENTITY snaplinks.adv.caption        "Advanced Options">
-<!ENTITY snaplinks.adv.openleave      "Open links when mouse leaves window">
-<!ENTITY snaplinks.adv.shownumber     "Show number of links selected in status bar">
-<!ENTITY snaplinks.adv.multiline      "Process correctly multi-line links (slower)">
-<!ENTITY snaplinks.adv.preferbold     "Prefer bold links when equal-sized (slower)">
-
-<!ENTITY snaplinks.usage.caption      "Usage">
-<!ENTITY snaplinks.usage.description  "Drag with selected mouse button to select links:">
-<!ENTITY snaplinks.usage.line0        "- Hold the Shift key to select all links inside selection area">
-<!ENTITY snaplinks.usage.line1        "- Hold the Alt key to move selection">
-<!ENTITY snaplinks.usage.line2        "- Hold the Ctrl key while releasing the mouse button to show the actions popup menu">
-
-
+<!ENTITY options.title "URL Lister Options">
+<!ENTITY automation.label "Automation">
+<!ENTITY defaultFormat.value "Default Format">
+<!ENTITY defaultFormat.label "Default Format">
+<!ENTITY defaultFormat.tooltip "Uses the as the default format when the URL list is shown.">
+<!ENTITY plainTextUrls.label "Plain Text URLs">
+<!ENTITY htmlAnchors.label "HTML Anchors">
+<!ENTITY linkedList.label "Linked List">
+<!ENTITY autoCopy.label ">Automatically Copy">
+<!ENTITY autoCopyExplaination.p "Copies the list of URLs when the main dialog is opened. Warning: overwrites clipboard contents.">
+<!ENTITY openOnPaste.label "Open Tabs when Paste is clicked">
+<!ENTITY openOnPaste.p "If you click the paste button, the URLs in the clipboard are automatiacally opened(you don't have to press the OK button)">
+<!ENTITY delimiter.label "Delimiters">
+<!ENTITY windows.label "\r\n (Windows)">
+<!ENTITY linux.label "\n (Linux)">
+<!ENTITY mac.label "\r (Mac)">

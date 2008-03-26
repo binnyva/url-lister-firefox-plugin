@@ -1,45 +1,46 @@
 <?xml version="1.0"?>
 <?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<!DOCTYPE urllister SYSTEM "chrome://urllister/locale/options.dtd">
 
 <dialog buttons="accept, cancel" id="urllister-main-dialog" height="450" width="400"
-		ondialogaccept="UrlListerOptions.saveOptions()" onload="UrlListerOptions.readOptions()" title="URL Lister Options"
+		ondialogaccept="UrlListerOptions.saveOptions()" onload="UrlListerOptions.readOptions()" title="&options.title;"
 		xmlns:html="http://www.w3.org/1999/xhtml"
 		xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 	<script src="lib.js" />
 	<script src="options.js" />
 	
 	<groupbox flex="1">
-		<caption label="Automation" />
-		<label control="default-format-menu" value="Default Format"/>
-		<menulist id="default-format-menu" label="Default Format" tooltip="Uses the as the default format when the URL list is shown.">
+		<caption label="&automation.label;" />
+		<label control="default-format-menu" value="&defaultFormat.value;"/>
+		<menulist id="default-format-menu" label="&defaultFormat.label;" tooltip="&defaultFormat.tooltip;">
 			<menupopup id="default-format-popup">
-				<menuitem label="Plain Text URLs"/>
-				<menuitem label="HTML Anchors"/>
-				<menuitem label="Linked List"/>
+				<menuitem label="&plainTextUrls.label;"/>
+				<menuitem label="&htmlAnchors.label;"/>
+				<menuitem label="&linkedList.label;"/>
 			</menupopup>
 		</menulist>
 		
 		<html:p>
 			<html:input id="auto-copy-checkbox" type="checkbox"/>
-			<html:label for="auto-copy-checkbox">Automatically Copy</html:label>
+			<html:label for="auto-copy-checkbox">&autoCopy.label;</html:label>
 			<html:br />
-			Copies the list of URLs when the main dialog is opened. Warning: overwrites clipboard contents.
+			&autoCopyExplaination.p;
 		</html:p>
 		
 		<html:p>
 			<html:input id="open-on-paste-checkbox" type="checkbox"/>
-			<html:label for="open-on-paste-checkbox">Open Tabs when Paste is clicked</html:label>
+			<html:label for="open-on-paste-checkbox">&openOnPaste.label;</html:label>
 			<html:br />
-			If you click the paste button, the URLs in the clipboard are automatiacally opened(you don't have to press the OK button)
+			&openOnPaste.p;
 		</html:p>
 	</groupbox>
 	
 	<groupbox flex="1">
-		<caption label="Delimiters" />
+		<caption label="&delimiter.label;" />
 		<radiogroup>
-			<radio id="windows-delimiter-radio" label="\r\n (Windows)" />
-			<radio id="linux-delimiter-radio" label="\n (Linux)" />
-			<radio id="mac-delimiter-radio" label="\r (Mac)" />
+			<radio id="windows-delimiter-radio" label="&windows.label;" />
+			<radio id="linux-delimiter-radio" label="&linux.label;" />
+			<radio id="mac-delimiter-radio" label="&mac.label;" />
 		</radiogroup>
 	</groupbox>
 </dialog>
