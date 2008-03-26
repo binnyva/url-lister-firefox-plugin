@@ -17,9 +17,11 @@
 			oncommand="UrlLister.showMainDialog();" />
 	</menupopup>
 	
+	<!--
 	<statusbar id="status-bar">
 		<statusbarpanel class="statusbarpanel-iconic" id="urllister_sbi"
 			onclick="UrlLister.showMainDialog();"
 			src="chrome://urllister/skin/images/icon16.png" />
 	</statusbar>
+	-->
 </overlay>
