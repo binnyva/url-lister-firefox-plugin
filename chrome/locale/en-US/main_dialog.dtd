@@ -1,0 +1,8 @@
+<!ENTITY urlLister.title "URL Lister">
+<!ENTITY openUrls.label "Open URLs">
+<!ENTITY format.label "Format">
+<!ENTITY plainText.label "Plain Text URLs">
+<!ENTITY htmlAnchors.label "HTML Anchors">
+<!ENTITY linkedList.label "Linked List">
+<!ENTITY copy.label "Copy">
+<!ENTITY paste.label "Paste">
