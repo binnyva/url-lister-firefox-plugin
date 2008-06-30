@@ -1,5 +1,5 @@
 var UrlLister = {
-	delimiter: "\n\r",
+	delimiter: "\n",
 	/**
 	 * Adds a menu item called 'URL Lister...' to the menu that appear when a tab is right clicked.
 	 */
@@ -38,7 +38,25 @@ var UrlLister = {
 	/// Happens when the OK button of the tab is clicked. Opens up the URLs in the textarea - if they are not already open.
 	openUrls:function () {
 		openNewTabWith = window.arguments[1];
-		var urls = document.getElementById("url-list").value.split(UrlLister.delimiter);
+		
+		var contents = document.getElementById("url-list").value;
+		if(contents.indexOf("<a ")+1) { // Its HTML Links
+			var urls = [];
+			var link_found = true;
+			while(link_found) {
+				link_found = false;
+				//Change anchrors to plain urls
+				if(contents.match(/<a [^>]*href=['"]?([^'"><]+)['"]?[^>]*>.+?<\/a>/)) {
+					urls.push(RegExp.$1);
+					//An anchor was found - remove that from the contents
+					contents = contents.replace(/<a [^>]*href=['"]?([^'"><]+)['"]?[^>]*>.+?<\/a>/, "");
+					link_found = true;
+				}
+			}
+		} else {
+			var urls = contents.split(UrlLister.delimiter);
+		}
+		
 		NEW_URL_LOOP:
 		for(var i=0; i<urls.length; i++) {
 			// See if the URL is already open - if so, don't open it again.
@@ -66,7 +84,7 @@ var UrlLister = {
 		}
 		window.tab_list = tab_list;
 		
-		var all_delimiters = {"windows":"\n\r", "linux":"\n", "mac":"\r"};
+		var all_delimiters = {"windows":"\n", "linux":"\n", "mac":"\r"};
 		UrlLister.delimiter = all_delimiters[Preference.get("extensions.urllister.delimiter")];
 		
 		//Get the URL list in the format given as the defaultFormat is the options.
@@ -86,7 +104,7 @@ var UrlLister = {
 		}, false);
 		
 		document.getElementById("button-copy").addEventListener('click', UrlLister.copyUrls, false);
-		document.getElementById("button-paste").addEventListener('click', UrlLister.pasteUrls, false);
+		document.getElementById("button-paste").addEventListener('click',UrlLister.pasteUrls,false);
 	},
 	
 	/// This is called when the format dropdown is changed.
@@ -102,11 +120,19 @@ var UrlLister = {
 	},
 	/// Converts the URL array to Anchors - in this format : <a href="url">Title</a><br />
 	getHtmlAnchors: function() {
-		return window.tab_list.map(function(ele){return '<a href="'+ele.url+'">'+ele.title+'</a><br />';}).join(UrlLister.delimiter);
+		return window.tab_list.map(function(ele){return '<a href="'+ele.url+'">'+UrlLister.escapeHtml(ele.title)+'</a><br />';}).join(UrlLister.delimiter);
 	},
 	/// Returns a bunch of anchors formated as a unordered list.
 	getLinkedList: function() {
-		return "<ul>" + UrlLister.delimiter + window.tab_list.map(function(ele){return '<li><a href="'+ele.url+'">'+ele.title+'</a></li>';}).join(UrlLister.delimiter) + UrlLister.delimiter + "</ul>";
+		return "<ul>" + UrlLister.delimiter + window.tab_list.map(function(ele){return '<li><a href="'+ele.url+'">'+UrlLister.escapeHtml(ele.title)+'</a></li>';}).join(UrlLister.delimiter) + UrlLister.delimiter + "</ul>";
+	},
+	
+	//Converts the html special chars(<,>,&) in the text argument and returns the result.
+	escapeHtml: function(text) {
+		text = text.replace(/\&/g, "\&amp;");
+		text = text.replace(/\</g, "\&lt;");
+		text = text.replace(/\>/g, "\&gt;");
+		return text;
 	},
 	
 	/**

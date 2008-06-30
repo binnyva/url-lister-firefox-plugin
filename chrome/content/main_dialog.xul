@@ -10,7 +10,7 @@
 	
 	<groupbox>
 		<label control="url-list" value="&openUrls.label;"/>
-	    <textbox id="url-list" rows="10" cols="35" multiline="true" style="width:100%" />
+	    <textbox id="url-list" multiline="true" style="width:100%;height:15em;" />
 		
 		<hbox>
 			<menulist id="format-menu" label="&format.label;">
