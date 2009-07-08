@@ -38,9 +38,9 @@
 	<groupbox flex="1">
 		<caption label="&delimiter.label;" />
 		<radiogroup>
-			<radio id="windows-delimiter-radio" label="&windows.label;" />
-			<radio id="linux-delimiter-radio" label="&linux.label;" />
-			<radio id="mac-delimiter-radio" label="&mac.label;" />
+			<radio id="windows-delimiter-radio" name="delimiter" label="&windows.label;" />
+			<radio id="linux-delimiter-radio" name="delimiter" label="&linux.label;" />
+			<radio id="mac-delimiter-radio" name="delimiter" label="&mac.label;" />
 		</radiogroup>
 	</groupbox>
 </dialog>

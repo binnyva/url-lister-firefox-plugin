@@ -4,6 +4,10 @@ var UrlListerOptions = {
 		document.getElementById("auto-copy-checkbox").checked = Preference.get("extensions.urllister.autoCopy");
 		document.getElementById("open-on-paste-checkbox").checked = Preference.get("extensions.urllister.openOnPaste");
 		
+		// These two lines are bugfixes
+ 		var delimiters = ["windows", "linux", "mac"];
+ 		for(var i in delimiters) document.getElementById(delimiters[i]+"-delimiter-radio").setAttribute("selected", false);
+ 		
 		var os = Preference.get("extensions.urllister.delimiter");
 		document.getElementById(os+"-delimiter-radio").setAttribute("selected", true);
 	},

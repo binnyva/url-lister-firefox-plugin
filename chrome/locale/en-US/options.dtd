@@ -9,7 +9,7 @@
 <!ENTITY autoCopy.label "Automatically Copy">
 <!ENTITY autoCopyExplaination.p "Copies the list of URLs when the main dialog is opened. Warning: overwrites clipboard contents.">
 <!ENTITY openOnPaste.label "Open Tabs when Paste is clicked">
-<!ENTITY openOnPaste.p "If you click the paste button, the URLs in the clipboard are automatiacally opened(you don't have to press the OK button)">
+<!ENTITY openOnPaste.p "If you click the paste button, the URLs in the clipboard are automatically opened(you don't have to press the OK button)">
 <!ENTITY delimiter.label "Delimiters">
 <!ENTITY windows.label "\r\n (Windows)">
 <!ENTITY linux.label "\n (Linux)">
